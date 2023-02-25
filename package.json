@@ -1,7 +1,13 @@
 {
-  "name": "d3",
+  "name": "react-d3-spring-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "React chart powered by D3.js and react-springs example",
+  "tags": [
+    "react",
+    "d3",
+    "react-spring",
+    "pie-chart"
+  ],
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
@@ -34,5 +40,10 @@
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vla9isla8/react-d3-spring-example"
+  },
+  "homepage": "https://vla9isla8.github.io/react-d3-spring-example"
 }
