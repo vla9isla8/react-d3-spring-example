@@ -1,4 +1,4 @@
-# React chart powered by D3.js and react-springs example
+# React chart example powered by D3.js and react-spring
 
 ## Live example
 
