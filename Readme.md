@@ -2,7 +2,7 @@
 
 ## Live example
 
-Result available on [page](https://vla9isla8.github.io/react-d3-spring-example)
+Result is available on [page](https://vla9isla8.github.io/react-d3-spring-example). Click "Change" button to see data.
 
 ## Installation
 
