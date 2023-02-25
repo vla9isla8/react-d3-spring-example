@@ -21,17 +21,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  builds:
-    runs-on: ubuntu-latest
+  deploy:
     env:
       PUBLIC_URL: ${{ steps.deployment.outputs.page_url }}
-    steps: 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
-      - name: Build Yarn and npm
-        uses: linchpin/action-build-yarn-npm@master
-  # Single deploy job since we're just deploying
-  deploy:
+     
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -41,6 +34,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+      - name: Build Yarn and npm
+        uses: linchpin/action-build-yarn-npm@master
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
