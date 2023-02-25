@@ -21,14 +21,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:     
+  # Single deploy job since we're just deploying
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm build
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Deploy react app to github pages
-        uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './build'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
