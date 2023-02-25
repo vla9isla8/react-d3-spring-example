@@ -27,19 +27,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Build Yarn and npm
-        uses: linchpin/action-build-yarn-npm@master
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: './build'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - uses: actions/checkout@v2
+      - name: Deploy react app to github pages
+        uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
