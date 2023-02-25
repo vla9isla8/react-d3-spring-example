@@ -1,7 +1,7 @@
 {
   "name": "react-d3-spring-example",
   "version": "1.0.0",
-  "description": "React chart powered by D3.js and react-springs example",
+  "description": "React chart example powered by D3.js and react-spring",
   "tags": [
     "react",
     "d3",
